@@ -1,5 +1,7 @@
+import { Button } from "./common";
+
 function App() {
-  return <h1>App</h1>;
+  return <Button>Test</Button>;
 }
 
 export default App;
