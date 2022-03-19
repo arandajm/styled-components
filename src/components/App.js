@@ -1,5 +1,7 @@
-import { Button } from "./common";
 import { createGlobalStyle } from "styled-components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -10,16 +12,18 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Kaushan Script"
   }
 `;
+
 function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>TEST</h1>
-      <Button>Primary Button</Button>
-      <Button secondary>Secondary Button</Button>
-      <Button disabled large>
-        Large Button
-      </Button>
+      {/* Routing config */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
