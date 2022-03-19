@@ -17,6 +17,9 @@ function App() {
       <h1>TEST</h1>
       <Button>Primary Button</Button>
       <Button secondary>Secondary Button</Button>
+      <Button disabled large>
+        Large Button
+      </Button>
     </>
   );
 }
