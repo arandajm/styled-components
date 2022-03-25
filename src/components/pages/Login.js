@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Layout, Input, PasswordInput, Button } from "components/common";
+import {
+  Layout,
+  Input,
+  PasswordInput,
+  Button,
+  Spinner,
+} from "components/common";
 import styled from "styled-components";
 
 const Form = styled.form`
@@ -44,19 +50,26 @@ const Login = () => {
     <Layout>
       <h1>Login</h1>
       <Form onSubmit={handleFormSubmit}>
-        <Input
-          name="username"
-          placeholder="Username"
-          value={formFields.username}
-          type="text"
-          onChange={handleInputChange}
-        />
+        {loading ? (
+          <Spinner />
+        ) : (
+          <>
+            <Input
+              name="username"
+              placeholder="Username"
+              value={formFields.username}
+              type="text"
+              onChange={handleInputChange}
+            />
 
-        <PasswordInput
-          name="password"
-          value={formFields.password}
-          onChange={handleInputChange}
-        />
+            <PasswordInput
+              name="password"
+              value={formFields.password}
+              onChange={handleInputChange}
+            />
+          </>
+        )}
+
         <Button large type="submit" disabled={loading}>
           {loading ? "Loading..." : "Login"}
         </Button>
