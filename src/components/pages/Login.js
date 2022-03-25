@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Input } from "components/common";
+import { Layout, Input, PasswordInput } from "components/common";
 import styled from "styled-components";
 
 const Form = styled.form`
@@ -35,11 +35,9 @@ const Login = () => {
           onChange={handleInputChange}
         />
 
-        <Input
+        <PasswordInput
           name="password"
-          placeholder="password"
           value={formFields.password}
-          type="password"
           onChange={handleInputChange}
         />
       </Form>
