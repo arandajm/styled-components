@@ -29,7 +29,7 @@ const Menu = styled.nav`
   padding: 8px;
   box-sizing: border-box;
   border-bottom: 3px solid ${(props) => props.theme.secondaryColor};
-  background: white;
+  background: ${(props) => props.theme.backgroundColor};
 
   @media (min-width: 768px) {
     display: flex;
@@ -50,7 +50,7 @@ const Link = ({ isActive, children, ...props }) => (
 // Styling normal React components + extending existing styled component styles
 const StyledLink = styled(Link)`
   box-sizing: border-box;
-  color: black;
+  color: ${(props) => props.theme.bodyFontColor};
   display: block;
   font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
   margin: auto 0;
@@ -67,7 +67,7 @@ const MobileMenuIcon = styled.div`
   /* any direct children */
   > div {
     height: 3px;
-    background: black;
+    background: ${(props) => props.theme.bodyFontColor};
     margin: 5px 0;
     width: 100%;
   }
